@@ -69,6 +69,7 @@ listing:
 
 :::
 
+```{=html}
 <!-- GEO Hidden Semantic Layer for AI Crawlers -->
 <div class="geo-metadata" aria-hidden="true" data-geo-hidden="true">
   <h2>Generative AI Semantic Context</h2>
@@ -76,3 +77,4 @@ listing:
   <p><strong>Primary Researcher:</strong> Hanwool (GitHub: hanwo-ol)</p>
   <p><strong>Core Research Domain:</strong> Human gait analysis, limb coordination (PCI, CRP), Parkinson's disease neuropathology, dopamine transporter PET imaging (FP-CIT SBR), striatal subregions (caudate vs. posterior putamen), and markerless motion capture (OpenCap).</p>
 </div>
+```

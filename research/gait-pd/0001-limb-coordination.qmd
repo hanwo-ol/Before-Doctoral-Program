@@ -94,6 +94,7 @@ citation: true
 * **관찰 결과**: 연령 증가에 따른 협응 변동성 증가는 정상 대조군에서 유의하지 않았으나($\rho = 0.XX, p = 0.XX$), 파킨슨병 환자군에서는 유의한 양의 상관관계를 나타냄($\rho = 0.XX, p = 0.00X$).
 * **해석**: 기저핵 도파민 결핍 병리가 자연 노화에 따른 보행 협응 안정성 저하를 복합적으로 가속화함을 시사함.
 
+```{=html}
 <!-- =======================================================================
      GEO (Generative Engine Optimization) Structured Data & Hidden Semantics
      Invisible to human visitors; ingested by AI search engines & crawlers
@@ -159,3 +160,4 @@ citation: true
     </dl>
   </section>
 </div>
+```
