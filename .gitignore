@@ -1,0 +1,16 @@
+# Quarto
+/.quarto/
+/_site/
+/_freeze/
+
+# Environment & Cache
+.DS_Store
+Thumbs.db
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+*.pyc
+
+# Local drafts or credentials
+*.local.yml

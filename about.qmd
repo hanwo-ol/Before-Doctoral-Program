@@ -1,0 +1,32 @@
+---
+title: "About Researcher"
+subtitle: "박사과정 진학 준비 및 연구 관심사 소개"
+page-layout: article
+---
+
+## 소개 (Biography)
+
+안녕하세요! 박사과정(Doctoral Program) 진학을 준비하며 인체 보행 분석(Gait Analysis)과 뇌신경계 질환(Parkinson's Disease)의 상호작용을 연구하고 있는 연구자입니다.
+
+임상 현장에서 널리 쓰일 수 있는 비마커 모션캡처(Markerless Motion Capture) 기술과 분자영상(FP-CIT PET) 데이터를 결합하여, 질환의 조기 감별을 넘어 환자 개개인의 신경학적 손상 기전을 객관적으로 설명하는 디지털 바이오마커 개발을 지향합니다.
+
+---
+
+## 주요 연구 관심 분야 (Research Interests)
+
+1. **인체 운동역학 및 사지 협응 (Limb Coordination & Biomechanics)**
+   - Continuous Relative Phase (CRP) 및 Phase Coordination Index (PCI)를 이용한 대칭/비대칭 보행 분석
+   - 대각선 상·하지(Arm-Leg) 커플링 및 4지 협응 안정성(Coordination Stability)
+2. **신경퇴행성 질환 및 뇌 영상 (Neuroimaging & Parkinson's Disease)**
+   - FP-CIT PET 기반 선조체 도파민 수송체 가용량(SBR) 정량 분석
+   - 피각(Putamen)의 운동 루프 vs. 미상핵(Caudate)의 인지-실행 루프 해부학적 해리 규명
+3. **디지털 헬스케어 및 비침습적 측정 (Markerless Motion Capture)**
+   - 스마트폰 다중 카메라 기반 비마커 3D 포즈 추정(OpenCap)의 임상 검증
+
+---
+
+## 링크 및 연락처 (Links)
+
+* **GitHub**: [github.com/hanwo-ol](https://github.com/hanwo-ol)
+* **Repository**: [Before-Doctoral-Program](https://github.com/hanwo-ol/Before-Doctoral-Program)
+* **Contact**: GitHub Issues 또는 블로그 포스트 하단의 Giscus 댓글을 통해 문의를 남겨주세요.

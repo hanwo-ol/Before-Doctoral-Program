@@ -1,0 +1,41 @@
+---
+title: "Research Wiki"
+subtitle: "주제별 연구 문서 및 지식 베이스"
+page-layout: full
+---
+
+## 연구 분야별 위키 안내
+
+좌측 사이드바의 트리 메뉴를 통해 관심 있는 연구 영역의 세부 문서를 확인하실 수 있습니다.
+
+### 주요 연구 축 (Main Pillars)
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card}
+::: {.card-body}
+#### 1. GAIT & Biomechanics (보행 역학)
+* **사지 협응 지표 (Limb Coordination)**
+  * [사지 협응도 분석 및 연구 배경 메모](gait-pd/0001-limb-coordination.qmd)
+  * Phase Coordination Index (PCI)
+  * Continuous Relative Phase (CRP)
+  * 4지 협응(Four-limb Coordination)
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card}
+::: {.card-body}
+#### 2. Neuroimaging & PD (뇌신경 및 파킨슨병)
+* **분자영상 및 도파민 신경망**
+  * FP-CIT PET Specific Binding Ratio (SBR)
+  * 미상핵(Caudate)의 인지-실행 루프
+  * 피각(Putamen)의 운동 루프
+  * 노화와 도파민 결핍의 상호작용
+:::
+:::
+:::
+
+:::

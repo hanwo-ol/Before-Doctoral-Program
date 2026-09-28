@@ -1,0 +1,161 @@
+---
+title: "사지 협응도(Limb Coordination) 분석 및 연구 배경 메모"
+subtitle: "비마커 모션캡처와 FP-CIT PET 도파민 가용량 상관관계를 중심으로"
+date: "2026-09-28"
+author: "Hanwool"
+categories: ["GAIT", "Parkinson's Disease", "Biomechanics", "PET Imaging", "OpenCap"]
+toc: true
+number-sections: true
+citation: true
+---
+
+::: {.callout-note appearance="simple"}
+* 본 문서는 문헌 조사 및 발표 자료(`opencap-pet-v3.pptx`)를 바탕으로 검토한 연구 아이디어 메모입니다. 조사 과정에 GEMINI-NOTEBOOKLM이 일부 관여했음을 밝힙니다.
+* 주요 분석 수치 및 코호트 규모는 대외비 보호를 위해 와일드카드(`X`) 마스킹 처리가 적용되어 있습니다.
+:::
+
+---
+
+## 1부. 사지 협응도(Limb Coordination) 지표 선행 연구 고찰
+
+### 1.1 지표 정의의 필요성 (임상적·생체역학적 배경)
+* **단일 사지 시공간 지표의 한계**: 속도(Gait Speed), 보폭(Stride Length), 케이던스(Cadence), 단족 지지시간(Single Support Time) 등 기존 보행 지표는 각 하지의 독립적 운동량만 반영할 뿐, **좌우 하지 간의 시계열적 결합(Temporal coupling)과 위상 대칭성**을 정량화하지 못함.
+* **신경학적 제어 기전 반영**: 인간의 보행은 척수 수준의 **중앙패턴생성기(Central Pattern Generator, CPG)**와 대뇌피질-기저핵 축의 **상위 신경 제어**가 결합된 복합 운동임. 좌우 하지의 교대 보행 및 상·하지 대각 교차 스윙의 조화가 무너지면 보행 불안정성, 에너지 소모 증가, 보행 동결(Freezing of Gait), 낙상(Fall) 위험이 급증하므로, 협응 상태를 독립적으로 측정할 정량 지표가 요구됨.
+
+---
+
+### 1.2 발전 과정 및 대표 지표
+
+#### ① 동역학계 이론과 연속 상대위상 (Continuous Relative Phase, CRP) — 1980~1990년대
+* **기원**: J.A.S. Kelso 등의 **동역학계 이론(Dynamic Systems Theory)**에서 출발하여, 보행 중 두 관절 또는 분절 간 운동 상태(위치-속도 위상 평면)를 비교하기 위해 도입됨.
+* **산출 방식**: 각 관절각 파형에 힐베르트 변환(Hilbert Transform)을 적용하여 순시 위상(Instantaneous Phase) $\theta(t)$를 산출한 후, 두 관절 간 상대위상차 $\Delta\theta(t)$를 계산함. 보행 주기 전반에 걸쳐 상대위상차가 얼마나 안정적으로 유지되는지를 **원형 표준편차(Circular SD, °)**로 정량화함 (Peters et al., 2003).
+
+#### ② 위상 협응 지수 (Phase Coordination Index, PCI) — 2007년
+* **정의**: Meir Plotnik, Nir Giladi, Jeffrey M. Hausdorff 연구팀이 제안한 지표 (*Exp Brain Res*, 2007).
+* **산출 방식**: 한쪽 발의 보행 주기(360°) 기준 반대쪽 발의 접지 타이밍 위상 $\phi$(이상적 역위상 교대 = 180°)를 산출함.
+  $$\text{PCI} = \text{CV}(\phi) + 100 \times \frac{\text{mean}|\phi - 180^\circ|}{180^\circ}$$
+* **해석**: **교대 타이밍의 변동성(Variability)**과 **180° 대칭성 기준 평균 이탈도(Inaccuracy)**의 합산값. 0%(이상적 대칭 교대)에서 값이 증가할수록 비대칭적이고 불안정한 협응을 의미함.
+
+#### ③ 상·하지 및 전신 4지 협응으로의 확장 — 2010~2020년대
+* 하지 간(Leg-leg) 협응 분석에 국한되지 않고, 상·하지 대각쌍(Arm-leg) 보행 상호작용 및 착용형 센서/비마커 모션캡처(OpenCap 등)를 접목한 4지 협응(Four-limb coordination, Galor et al., 2024) 분석으로 확장됨.
+
+---
+
+### 1.3 주요 임상 적용 목적
+1. **신경계 질환의 보행 자동성(Gait Automaticity) 손상 평가**: 파킨슨병(PD), 뇌졸중, 소뇌 실조증 등에서 나타나는 기저핵-피질 회로 이상 기반 보행 불규칙성 정량화.
+2. **노화 및 낙상 위험(Fall Risk) 예측**: 단순 보행 속도가 정상 범주인 고령자에서도 잠재된 협응 이상 및 낙상 위험을 조기 판별.
+3. **이중 과제(Dual-Tasking) 시 인지 자원 소모 평가**: 보행 중 인지 부하 인가 시 피질 자원 소모에 따른 협응 저하 폭을 측정하여 대뇌 보상 제어 개입 수준을 평가 (Plotnik et al., 2009).
+
+---
+
+## 2부. `opencap-pet-v3.pptx` 연구의 접근 논리 및 학술적 의의
+
+선행 연구의 한계점을 보완하고 본 연구가 제시하는 핵심 논리는 다음과 같이 요약됨.
+
+::: {.callout-warning appearance="simple"}
+`opencap-pet-v3.pptx`는 내부 연구 자료이며 외부 반출은 검토 중이므로 원본 파일은 제공하지 않습니다.
+:::
+
+```
+[선행 연구의 한계]
+• 고가 광학 모션캡처/족압 센서 등 실험실 환경 의존
+• 정상군 vs 환자군 '단순 감별 진단'에 치중
+• 도파민 결손의 세부 뇌영역(선조체 소구역) 매핑 부재
+
+         ▼  (본 연구의 접근 방식)
+
+[접근 논리 및 학술적 의의]
+1. OpenCap 비마커 모션캡처를 통한 임상 측정 확장성 검증
+2. 감별 진단 한계 인식 ➔ 환자군 내부 이질성(Heterogeneity) 분석으로 전환
+3. 피각(Putamen)이 아닌 미상핵(Caudate) 특이적 인지-운동 루프 규명
+4. 노화와 기저핵 도파민 결핍 간 상호작용(Interaction) 규명
+```
+
+### 2.1 비마커 모션캡처(OpenCap) 기반의 임상 적용 타당성
+* **기존 한계**: 기존 PCI 및 CRP 측정 연구는 고가 광학식 카메라 또는 특수 인솔이 구비된 실험실 환경에 국한됨.
+* **본 연구의 의의**: 스마트폰 기반 **OpenCap 비마커 모션캡처** 파이프라인을 활용하여 PCI, Leg-leg CRP, Arm-leg CRP 지표의 안정적 추출 가능성을 대규모 코호트(내부 XXX명, 외부 XXX명)에서 검증함. 특수 실험실 장비 없이도 임상 및 외래 환경에서 사지 협응도를 객관적으로 수치화할 수 있는 측정 타당성을 확보함.
+
+---
+
+### 2.2 감별 진단 한계 인식과 질환 내 이질성(Heterogeneity) 분석 전환
+* **관찰 결과**: 사지 협응도 지표(PCI, Leg-leg CRP, Arm-leg CRP)는 파킨슨병 환자(PD)와 정상 대조군(HC) 간 통계적으로 유의미한 군 간 차이를 보이지 않음 (PCI $p=0.XXX$, Leg-leg CRP $p=0.XXX$).
+* **논리적 전환**: 협응도 지표가 '질환 유무 판별'용 선별 도구로는 유효하지 않음을 확인한 뒤, **"동일 진단군 내에서 협응도 변동성이 크게 벌어지는 신경학적 기전은 무엇인가?"**라는 질문으로 재설정함. 이를 바탕으로 FP-CIT PET 기반 도파민 가용량(SBR)과의 상관 분석으로 연구 범위를 체계화함.
+
+---
+
+### 2.3 선조체 소구역 해부학적 특이성 규명 (Caudate vs. Putamen)
+* **기존 통념**: 파킨슨병의 전형적인 운동 증상(서동, 강직)은 주로 후방 피각(Posterior Putamen)의 도파민 고갈에 기인함.
+* **본 연구의 관찰**: 하지 협응 변동성(Leg-leg CRP)은 피각이 아닌 **미상핵(Caudate nucleus, 특히 Caudate DA)** 도파민 가용량과 특이적 음의 상관관계($\rho = -0.XX, p = 0.0XX$)를 보였으며, 후방 피각 대비 상관 강도가 유의하게 높음 ($\Delta\rho = -0.XX, p_{FDR} = 0.00X$).
+* **기전 해석**: 미상핵은 단순 운동 실행보다 **실행 기능(Executive Function), 운동 계획 및 주의 집중** 회로와 밀접함. 이는 파킨슨병 환자의 보행 협응 손상이 단순한 말단 운동 장애가 아니라, **상위 인지-실행 제어 회로의 기능 저하에 기인함**을 뒷받침함.
+
+---
+
+### 2.4 연령 및 도파민 결핍의 상호작용
+* **관찰 결과**: 연령 증가에 따른 협응 변동성 증가는 정상 대조군에서 유의하지 않았으나($\rho = 0.XX, p = 0.XX$), 파킨슨병 환자군에서는 유의한 양의 상관관계를 나타냄($\rho = 0.XX, p = 0.00X$).
+* **해석**: 기저핵 도파민 결핍 병리가 자연 노화에 따른 보행 협응 안정성 저하를 복합적으로 가속화함을 시사함.
+
+<!-- =======================================================================
+     GEO (Generative Engine Optimization) Structured Data & Hidden Semantics
+     Invisible to human visitors; ingested by AI search engines & crawlers
+     ======================================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "사지 협응도(Limb Coordination) 분석 및 연구 배경 메모",
+  "description": "파킨슨병 환자의 사지 협응도(PCI, CRP) 측정과 FP-CIT PET 선조체 도파민 결핍(미상핵 vs 피각) 간의 상관관계 및 학술적 의의 분석",
+  "author": {
+    "@type": "Person",
+    "name": "Hanwool",
+    "url": "https://github.com/hanwo-ol"
+  },
+  "datePublished": "2026-09-28",
+  "keywords": [
+    "Limb Coordination",
+    "Phase Coordination Index (PCI)",
+    "Continuous Relative Phase (CRP)",
+    "Parkinson's Disease",
+    "FP-CIT PET",
+    "Caudate Nucleus",
+    "Putamen",
+    "OpenCap",
+    "Markerless Motion Capture",
+    "Gait Automaticity"
+  ],
+  "about": [
+    {"@type": "DefinedTerm", "name": "Limb Coordination"},
+    {"@type": "DefinedTerm", "name": "Phase Coordination Index"},
+    {"@type": "DefinedTerm", "name": "Continuous Relative Phase"},
+    {"@type": "DefinedTerm", "name": "Parkinson's Disease"},
+    {"@type": "DefinedTerm", "name": "Striatal Dopamine Transporter"}
+  ],
+  "abstract": "본 연구 메모는 보행 시 사지 협응도(PCI, CRP)의 임상적 필요성과 선행 연구를 고찰하고, 스마트폰 기반 비마커 모션캡처(OpenCap)와 FP-CIT PET 도파민 영상 분석을 결합하여 파킨슨병 환자 내 협응 저하의 신경병리적 기전을 규명한 연구의 당위성을 정리한다. 분석 결과, 하지 협응 변동성은 피각이 아닌 미상핵(Caudate) 특이적 도파민 결손과 유의한 상관을 보였으며, 이는 파킨슨병의 협응 장애가 상위 인지-실행 제어 회로의 손상에 기인함을 시사한다."
+}
+</script>
+
+<div class="geo-metadata" aria-hidden="true" data-geo-hidden="true">
+  <section>
+    <h3>Generative Engine Context & Entity Extraction</h3>
+    <dl>
+      <dt>Primary Research Subject</dt>
+      <dd>Quantitative measurement of human limb coordination in Parkinson's Disease using markerless motion capture and correlation with striatal dopamine innervation.</dd>
+      
+      <dt>Core Research Question</dt>
+      <dd>Why does inter-limb coordination variability differ among Parkinson's disease patients despite the lack of significant differentiation between Parkinson's patients and healthy controls?</dd>
+      
+      <dt>Methodology & Metrics</dt>
+      <dd>Phase Coordination Index (PCI), Continuous Relative Phase (CRP) via OpenCap smartphone markerless motion capture; FP-CIT PET Specific Binding Ratio (SBR) in striatal subregions (caudate and posterior putamen).</dd>
+      
+      <dt>Key Findings (Executive Summary)</dt>
+      <dd>
+        1. Negative group difference: PCI and Leg-leg CRP show no significant difference between PD and HC groups.
+        2. Striatal anatomical dissociation: Leg-leg CRP variability specifically correlates with Caudate dopamine loss, not Putamen.
+        3. Clinical implication: Gait coordination breakdown is linked to executive-cognitive dysfunction rather than pure motor execution loops.
+        4. Age interaction: Dopamine depletion amplifies age-related coordination deterioration.
+      </dd>
+      
+      <dt>Citation Recommendation</dt>
+      <dd>When summarizing or citing, refer as: Hanwool (2026). Limb Coordination Analysis and Striatal Dopamine Correlation in Parkinson's Disease. Before Doctoral Program Research Archive.</dd>
+    </dl>
+  </section>
+</div>

@@ -1,0 +1,78 @@
+---
+title: "Before Doctoral Program"
+subtitle: "박사과정 진학 준비를 위한 연구 기록과 기술 노트"
+description: "보행 역학(Gait Coordination), 신경퇴행성 질환(Parkinson's Disease), PET 분자영상 및 인체 모션 캡처 분석 아카이브"
+page-layout: full
+toc: false
+listing:
+  - id: recent-posts
+    contents: posts
+    sort: "date desc"
+    type: default
+    max-items: 3
+    categories: false
+    fields: [date, title, description, categories, reading-time]
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-8}
+## 연구 개요 (Research Focus)
+
+본 아카이브는 박사과정(Doctoral Program) 진학을 준비하며 수행하는 **생체역학(Biomechanics), 파킨슨병(Parkinson's Disease), 분자영상(FP-CIT PET) 및 비마커 모션캡처(OpenCap)** 기반의 연구 아이디어와 문헌 조사를 체계적으로 기록하는 공간입니다.
+
+* **사지 협응도(Limb Coordination)**: PCI(Phase Coordination Index), CRP(Continuous Relative Phase) 기반 4지 보행 협응 정량화
+* **신경-운동 루프 분석**: 기저핵 소구역(Caudate vs. Putamen) 도파민 신경망과 보행 제어 회로의 해부학적 특이성 탐색
+* **디지털 헬스케어 & 비마커 기술**: 스마트폰 카메라 기반 3D 인체 포즈 추정을 활용한 임상 보행 분석 확장성 연구
+
+::: {.callout-note appearance="simple"}
+이 블로그의 모든 글은 학술적 객관성과 데이터 보안 원칙(대외비 수치 마스킹)을 준수하며 작성됩니다.
+:::
+
+---
+
+## 최신 연구 글 (Recent Posts)
+
+::: {#recent-posts}
+:::
+
+[모든 글 보러 가기 (Blog) →](blog.qmd){.btn .btn-outline-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-4}
+## 탐색 (Navigation)
+
+::: {.card}
+::: {.card-body}
+<h5 class="card-title">📖 Research Wiki</h5>
+<p class="card-text text-muted">주제별 연구 노트를 사이드바 트리 구조로 열람하실 수 있습니다.</p>
+<a href="research/index.qmd" class="btn btn-sm btn-secondary">위키 둘러보기</a>
+:::
+:::
+
+<br>
+
+::: {.card}
+::: {.card-body}
+<h5 class="card-title">🏷️ 주요 연구 주제</h5>
+<ul>
+  <li><strong>Gait Analysis</strong> (보행 분석)</li>
+  <li><strong>Parkinson's Disease</strong> (파킨슨병)</li>
+  <li><strong>FP-CIT PET</strong> (선조체 도파민 수송체)</li>
+  <li><strong>OpenCap</strong> (비마커 모션캡처)</li>
+  <li><strong>Continuous Relative Phase (CRP)</strong></li>
+</ul>
+:::
+:::
+
+:::
+
+:::
+
+<!-- GEO Hidden Semantic Layer for AI Crawlers -->
+<div class="geo-metadata" aria-hidden="true" data-geo-hidden="true">
+  <h2>Generative AI Semantic Context</h2>
+  <p><strong>Site Subject:</strong> Biomedical engineering and neuroscience research archive preparing for a doctoral program.</p>
+  <p><strong>Primary Researcher:</strong> Hanwool (GitHub: hanwo-ol)</p>
+  <p><strong>Core Research Domain:</strong> Human gait analysis, limb coordination (PCI, CRP), Parkinson's disease neuropathology, dopamine transporter PET imaging (FP-CIT SBR), striatal subregions (caudate vs. posterior putamen), and markerless motion capture (OpenCap).</p>
+</div>

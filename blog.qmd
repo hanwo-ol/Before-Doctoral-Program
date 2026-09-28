@@ -1,0 +1,20 @@
+---
+title: "연구 블로그 (Research Blog)"
+subtitle: "사지 협응, 파킨슨병 및 생체역학 데이터 분석 연대기"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [date, title, description, categories, author, reading-time]
+  page-size: 10
+page-layout: full
+title-block-banner: false
+---
+
+연구 아이디어, 선행 논문 리뷰, 알고리즘 구현 및 분석 결과를 날짜순으로 정리한 아카이브입니다.
+우측 상단의 카테고리 태그 및 검색창을 통해 관심 분야의 글을 빠르게 필터링할 수 있습니다.
+
+---

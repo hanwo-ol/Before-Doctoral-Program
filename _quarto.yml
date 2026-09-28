@@ -1,0 +1,75 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Before Doctoral Program"
+  description: "박사과정 준비 연구 노트 | Biomechanics, Gait Coordination & Neuroimaging"
+  site-url: "https://hanwo-ol.github.io/Before-Doctoral-Program"
+  
+  navbar:
+    title: "Before Doctoral Program"
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "Research Wiki"
+        href: research/index.qmd
+    right:
+      - text: "About"
+        href: about.qmd
+      - icon: github
+        href: https://github.com/hanwo-ol/Before-Doctoral-Program
+        aria-label: GitHub
+
+  sidebar:
+    - id: research-sidebar
+      style: "docked"
+      search: true
+      contents:
+        - text: "연구 개요"
+          href: research/index.qmd
+        - section: "GAIT Analysis"
+          contents:
+            - section: "Parkinson's Disease (PD)"
+              contents:
+                - text: "사지 협응도 및 도파민 결핍 분석"
+                  href: research/gait-pd/0001-limb-coordination.qmd
+
+  page-footer:
+    left: "© 2026 Hanwool. All rights reserved."
+    center: "박사과정 준비 연구 아카이브"
+    right: "Built with [Quarto](https://quarto.org/) & GitHub Pages"
+
+  comments:
+    giscus:
+      repo: "hanwo-ol/Before-Doctoral-Program"
+      repo-id: "" # GitHub Discussions 활성화 후 repo-id 입력
+      category: "Announcements"
+      category-id: "" # GitHub Discussions 활성화 후 category-id 입력
+      mapping: "pathname"
+      reactions-enabled: true
+      loading: "lazy"
+
+format:
+  html:
+    theme:
+      light: journal
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-title: "목차"
+    smooth-scroll: true
+    code-copy: true
+    code-tools: true
+    citations-hover: true
+    footnotes-hover: true
+    html-math-method: mathjax
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
