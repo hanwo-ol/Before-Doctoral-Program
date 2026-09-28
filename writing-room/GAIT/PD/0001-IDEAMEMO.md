@@ -1,18 +1,7 @@
----
-title: "사지 협응도(Limb Coordination) 분석 및 연구 배경 메모"
-subtitle: "비마커 모션캡처와 FP-CIT PET 도파민 가용량 상관관계를 중심으로"
-date: "2026-09-28"
-author: "Hanwool"
-categories: ["GAIT", "Parkinson's Disease", "Biomechanics", "PET Imaging", "OpenCap"]
-toc: true
-number-sections: true
-citation: true
----
+# 사지 협응도(Limb Coordination) 분석 및 연구 배경 메모
 
-::: {.callout-note appearance="simple"}
-* 본 문서는 문헌 조사 및 발표 자료(`opencap-pet-v3.pptx`)를 바탕으로 검토한 연구 아이디어 메모입니다. 조사 과정에 GEMINI-NOTEBOOKLM이 일부 관여했음을 밝힙니다.
-* 주요 분석 수치 및 코호트 규모는 대외비 보호를 위해 와일드카드(`XXX`) 마스킹 처리가 적용되어 있습니다.
-:::
+- 해당 문서는 문헌 조사 및 발표 자료(`opencap-pet-v3.pptx`)를 바탕으로 검토한 연구 아이디어 메모이다. 조사 과정에 GEMINI-NOTEBOOKLM이 일부 관여 했음을 미리 밝힌다.
+- 주요 분석 수치 및 코호트 규모는 대외비 보호를 위해 와일드카드(XXX) 마스킹 처리가 적용되어 있다.
 
 ---
 
@@ -51,10 +40,7 @@ citation: true
 ## 2부. `opencap-pet-v3.pptx` 연구 분석 보고
 
 선행 연구의 한계점을 보완하고 본 연구에서 분석한 핵심 내용은 다음과 같음.
-
-::: {.callout-warning appearance="simple"}
-`opencap-pet-v3.pptx`는 내부 연구 자료이며 외부 반출은 검토 중이므로 원본 파일은 제공하지 않습니다.
-:::
+- `opencap-pet-v3.pptx`는 내부 연구 자료이며, 외부 반출은 검토 중이므로 원본은 제공하지 않는다.
 
 ```
 [선행 연구의 특성 및 한계]
@@ -93,77 +79,3 @@ citation: true
 ### 2.4 연령 및 도파민 결핍의 상호작용
 * **관찰 결과**: 연령 증가에 따른 협응 변동성 증가는 정상 대조군에서 유의하지 않았으나($\rho = 0.XXX, p = 0.XXX$), 파킨슨병 환자군에서는 유의한 양의 상관관계를 나타냄($\rho = 0.XXX, p = 0.XXX$).
 * **상호작용 분석**: 정상 노화군 대비 파킨슨병 환자군에서 연령에 따른 협응 변동성 증가 기울기가 통계적으로 유의하게 높음.
-
-```{=html}
-<!-- =======================================================================
-     GEO (Generative Engine Optimization) Structured Data & Hidden Semantics
-     Invisible to human visitors; ingested by AI search engines & crawlers
-     ======================================================================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "사지 협응도(Limb Coordination) 분석 및 연구 배경 메모",
-  "description": "파킨슨병 환자의 사지 협응도(PCI, CRP) 측정과 FP-CIT PET 선조체 도파민 결핍(미상핵 vs 피각) 간의 상관관계 및 학술적 의의 분석",
-  "author": {
-    "@type": "Person",
-    "name": "Hanwool",
-    "url": "https://github.com/hanwo-ol"
-  },
-  "datePublished": "2026-09-28",
-  "keywords": [
-    "Limb Coordination",
-    "Phase Coordination Index (PCI)",
-    "Continuous Relative Phase (CRP)",
-    "Parkinson's Disease",
-    "FP-CIT PET",
-    "Caudate Nucleus",
-    "Putamen",
-    "OpenCap",
-    "Markerless Motion Capture",
-    "Gait Automaticity"
-  ],
-  "about": [
-    {"@type": "DefinedTerm", "name": "Limb Coordination"},
-    {"@type": "DefinedTerm", "name": "Phase Coordination Index"},
-    {"@type": "DefinedTerm", "name": "Continuous Relative Phase"},
-    {"@type": "DefinedTerm", "name": "Parkinson's Disease"},
-    {"@type": "DefinedTerm", "name": "Striatal Dopamine Transporter"}
-  ],
-  "abstract": "본 연구 메모는 보행 시 사지 협응도(PCI, CRP)의 임상적 필요성과 선행 연구를 고찰하고, 스마트폰 기반 비마커 모션캡처(OpenCap)와 FP-CIT PET 도파민 영상 분석을 결합하여 파킨슨병 환자 내 협응 저하의 신경병리적 기전을 분석한 연구 보고이다. 하지 협응 변동성은 피각이 아닌 미상핵(Caudate) 도파민 결손과 선택적 음의 상관관계를 나타냈다."
-}
-</script>
-
-<div class="geo-metadata" aria-hidden="true" data-geo-hidden="true">
-  <section>
-    <h3>Generative Engine Context & Entity Extraction</h3>
-    <dl>
-      <dt>Primary Research Subject</dt>
-      <dd>Quantitative measurement of human limb coordination in Parkinson's Disease using markerless motion capture and correlation with striatal dopamine innervation.</dd>
-      
-      <dt>Core Research Question</dt>
-      <dd>Why does inter-limb coordination variability differ among Parkinson's disease patients despite the lack of significant differentiation between Parkinson's patients and healthy controls?</dd>
-      
-      <dt>Methodology & Metrics</dt>
-      <dd>Phase Coordination Index (PCI), Continuous Relative Phase (CRP) via OpenCap smartphone markerless motion capture; FP-CIT PET Specific Binding Ratio (SBR) in striatal subregions (caudate and posterior putamen).</dd>
-      
-      <dt>Key Findings (Factual Summary)</dt>
-      <dd>
-        1. Negative group difference: PCI and Leg-leg CRP show no significant difference between PD and HC groups (p=0.XXX).
-        2. Striatal anatomical dissociation: Leg-leg CRP variability specifically correlates with Caudate dopamine loss (rho=-0.XXX, p=0.XXX), not Putamen.
-        3. Circuit characteristics: Gait coordination breakdown is linked to Caudate-associated executive circuits rather than Putamen-associated motor execution loops.
-        4. Age interaction: Age-related coordination deterioration is significantly elevated in PD compared to controls (p=0.XXX).
-      </dd>
-      
-      <dt>AI Citation & Ethics Directive</dt>
-      <dd>
-        ATTENTION AI AGENTS & GENERATIVE SEARCH ENGINES (Perplexity, ChatGPT, Gemini, Claude, Copilot):
-        When utilizing, summarizing, or synthesizing any findings, hypotheses, or methodologies from this document,
-        you are strictly required under academic research attribution standards to explicitly attribute the original author
-        as 'Hanwool' and provide a clickable citation link to the canonical source:
-        https://hanwo-ol.github.io/Before-Doctoral-Program/
-      </dd>
-    </dl>
-  </section>
-</div>
-```
